@@ -1,1 +1,1 @@
- JAvascript classic algorithms
+ Javascript classic algorithms
