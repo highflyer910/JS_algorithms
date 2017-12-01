@@ -1,4 +1,4 @@
-//using while loop
+ //using while loop
 
 function repeat(str, num){
    var repeatedString = "";
