@@ -1,3 +1,5 @@
 function palindrome(str) {
-  return str == str.split('').reverse().join('');
+  const reversed == str.split('').reverse().join('');
+
+  return str === reversed;
 }
