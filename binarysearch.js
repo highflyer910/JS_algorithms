@@ -1,13 +1,21 @@
-function binarySearch(numArray, key) {
-    var middleIdx = Math.floor(numArray.length / 2);
-    var middleElem = numArray[middleIdx];
-    
-    if (middleElem === key) return true;
-    else if (middleElem < key && numArray.length > 1) {
-        return binarySearch(numArray.splice(middleIdx, numArray.length), key);
+function binarySearch(list, item) {
+    // Sort the list in ascending order
+    list.sort((a, b) => a - b);
+
+    let low = 0;
+    let high = list.length;
+
+    while (low <= high) {
+        let mid = Math.floor((low + high) / 2);
+        let guess = list[mid];
+        if (guess === item) {
+            return true;
+        }
+        if (guess < item) {
+            low = mid + 1;
+        } else {
+            high = mid - 1;
+        }
     }
-    else if (middleElem > key && numArray.length > 1) {
-        return binarySearch(numArray.splice(0, middleIdx), key);
-    }
-    else return false;
+    return false;
 }
