@@ -19,3 +19,4 @@ function binarySearch(list, item) {
     }
     return false;
 }
+
