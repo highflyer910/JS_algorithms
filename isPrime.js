@@ -1,15 +1,14 @@
 function isPrime(num) {
-    let flag = true;
+    if(num <= 1) return false;
+    if(num === 2) return true;
 
-    for (let i = 2; i <= num - 1; i++) {
-        if (num % i === 0) {
-            flag = false;
-            break;
+    let num2 = Math.sqrt(num);
+
+    for(let i = 2; i <= num2; i++){
+        if(num2 % 2 === 0){
+            return false;
         }
-    }
 
-    if (flag === true) {
-        return "n is a prime number";
+        return true;
     }
-    return "n is not a prime number";
 }
