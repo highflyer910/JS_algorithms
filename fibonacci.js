@@ -1,7 +1,16 @@
-function fibonacci(num) {
-  if (num <= 1) return num;
+function fibonacci_series(n) 
+{
+  if (n===1) 
+  {
+    return [0, 1];
+  } 
+  else 
+  {
+    var s = fibonacci_series(n - 1);
+    s.push(s[s.length - 1] + s[s.length - 2]);
+    return s;
+  }
+};
 
-  return fibonacci(num - 1) + fibonacci(num - 2);
-}
-
-//It's not effective but is good for tech interviews :)
+ console.log(fibonacci_series(5));
+ 
