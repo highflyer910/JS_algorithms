@@ -11,9 +11,6 @@ function findLongestWord(str) {
   return longestWord;
 }
 
-
-
-
 //with the sort() method
 
 function findLongestWord(str) {
@@ -22,3 +19,19 @@ function findLongestWord(str) {
 });
   return longestWord[0].length;
 }
+
+// with for .. of
+function findLongestWord(str) {
+  const words = str.split(" ");
+  let longest = "";
+  for (let word of words) {
+    if (word.length > longest.length) longest = word;
+  }
+  return longest;
+}
+
+// with reduce()
+const findLongestWord = str =>
+  str.split(" ").reduce((longest, current) =>
+    current.length > longest.length ? current : longest
+  );
